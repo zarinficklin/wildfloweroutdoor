@@ -1,0 +1,130 @@
+
+
+/* -- responsive.css -----------*/
+
+@media only screen and (max-width: 1030px) {
+	body.boxed #body_wrapper			{ width: auto; }	
+}
+
+@media only screen and (min-width: 960px) {	
+	ul.products .gridbreaker 			{ clear: both; height:20px; display: block; }
+	ul.products .gridbreaker:last-child { height:0; }
+	ul.products li.grid.first 			{ clear: both; }            
+	ul.products li.grid.last 			{ margin-right: 0 !important; }
+}
+
+@media only screen and (max-width: 959px) {
+	body.fixed-header.boxed #header_wrapper	{ width: 100%; }
+	ul.products 						{ margin-right: -25px; }
+	ul.products li.grid 				{ margin-bottom: 20px; }
+	.full-width ul.products				{ margin-right: -40px; }
+	.carousel-products					{ width:100% !important; }
+}
+
+/***** Tablet *****/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#bottom_content .grid_5.first 		{ padding-right: 32px; }
+	#bottom_content .grid_5.second 		{ padding-left: 16px; padding-right: 32px; }
+	#bottom_content .grid_5.third 		{ padding-right: 16px; }
+	#bottom_content .grid_5.fourth 		{ padding-left: 32px; }
+	.widget-contact-form input[type="text"], .widget-contact-form textarea { width: 132px; }
+	#sidebar #s							{ width: 100px; }
+	div.product div.summary				{ padding-left: 16px; }
+	.da-slide 							{ width: 960px !important; margin-left: -480px !important; }
+	.ca-container						{ width: 640px; }
+	.ca-content							{ width: 320px; position: relative; }
+	.post-meta.grid_4					{ width: 125px; }
+	.post-meta div.blog-comment			{ width: 75px; }
+	.grid_18 table.shop_table td.actions div.coupon	{ width: 100%; margin-bottom: 10px; }
+}
+
+@media only screen and (max-width: 767px) {
+	.two-columns, .three-columns, .four-columns	{ width:100%; margin:10px 0 0 0; float:left; display:inline; }
+	.testimonial-container blockquote 	{ margin:0; float:left; }
+	#nav_wrapper 						{ height:auto; }
+	#top_bar_wrapper .welcome 			{ float:none !important; text-align:center; margin-bottom:10px; }
+	#top_bar_wrapper #info_nav 			{ float:none !important; text-align:center; }
+	#info_nav ul, #info_nav > div 		{ float:none !important;}
+	#header_logo 						{ float:none !important; margin:auto; position:relative; }
+	#menu 								{ float:none !important; margin-right:0px;}
+	.searchform 						{ width:210px; margin:auto; float:none;  }
+	#search_box #s 						{ position:relative; width:160px; }
+	#sidebar							{ margin-top: 40px; }
+	#bottom_content .grid_5.first,
+	#bottom_content .grid_5.second,
+	#bottom_content .grid_5.third,
+	#bottom_content .grid_5.fourth 		{ padding-left:0; padding-right:0; background: none; }
+	.post-title, .post-title a			{ font-size: 22px !important; }
+	ul.products li,
+	ul.products li .product-details		{ width: 135px !important; }
+	ul.products li.modern .price		{ right: -10px; }
+	ul.products li.grid 				{ margin-right: 25px !important; }
+	#portfolio-gallery .item-wrapper	{ display: block; float: none; margin-top: 0 !important; }
+	table.shop_table td.actions div.coupon	{ width: 100%; margin-bottom: 10px; }
+	.cart-collaterals .cart_totals		{ width: 100%; }
+	.cart-collaterals .shipping_calculator	{ width: 100%; float: right; }
+	.col2-set .col-1, .col2-set .col-2	{ width:100%; margin:10px 0 0 0; float:left; display:inline; }
+	.order_details li					{ margin-bottom: 10px; }
+}
+
+/***** Phone (landscape 420px) *****/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	input[type="text"], textarea 		{ max-width: 436px; }
+	.widget-contact-form input[type="text"], .widget-contact-form textarea { width: 436px; }
+	.post-meta 							{ width: 456px !important;}
+	.post-meta div.post-date 			{ height:20px; float:left; margin-right:5px; width:155px; }
+	.post-meta div.post-date .date 		{ float:left; margin:0; }
+	.post-meta div.post-date .time 		{ float:right; margin:0; }
+	.post-meta div.comment-count		{ height:40px; }
+	.post-meta div.post-author img		{ width:40px; }
+	div.product div.images				{ max-width: 456px !important;}
+	div.product div.summary				{ padding-left:0; width: 456px !important;}
+	ul.cart_list li, 
+	ul.product_list_widget li,
+	.recent-post-holder,
+	.widget_nav_menu li					{ width: 45%; float: left; display: inline; padding-right: 5%;}
+	ul.cart_list:before,
+	ul.cart_list:after, 
+	ul.product_list_widget:before,
+	ul.product_list_widget:after,
+	.widget_app_recent:before,
+	.widget_app_recent:after,
+	.widget_nav_menu ul:before,
+	.widget_nav_menu ul:after			{ clear: both; content: ' '; display:block; height: 0; visibility: hidden;}
+	.contentslider-wrapper				{ zoom: 0.75;}
+	.da-slide 							{ width: 760px !important; margin-left: -380px !important; }
+	.ca-container						{ width: 320px; }
+	.ca-content-wrapper					{ left: 0px !important; }
+	.ca-content							{ width: 320px; position: relative; }
+	#portfolio-gallery .item-wrapper.grid_6		{ width: 220px; padding: 0 4px; display: inline; float: left; }
+	#portfolio-gallery .item-wrapper.grid_6:nth-child(2)	{ display: block; float: none; }
+	table th							{ padding: 0px 9px; }
+	table td							{ padding:9px 9px; }
+	table.shop_table td.product-name a	{ display:block; max-width: 160px; }
+}
+
+/***** Phone (portrait 300px) *****/
+@media only screen and (max-width: 479px) {
+	input[type="text"], textarea 		{ max-width: 275px; }
+	.widget-contact-form input[type="text"], .widget-contact-form textarea { width: 275px; }
+	.post-meta 							{ width: 300px !important;}
+	.post-meta div.post-author 			{ display:none; }
+	.post-meta div.post-date 			{ height:20px; float:left; margin-right:5px; width:155px; }
+	.post-meta div.post-date .date 		{ float:left; margin:0; }
+	.post-meta div.post-date .time 		{ float:right; margin:0; }
+	.post-meta div.comment-count		{ height:40px; }
+	div.product div.images				{ max-width: 300px !important;}
+	div.product div.summary				{ padding-left:0; width: 300px !important;}
+	.contentslider-wrapper				{ zoom: 0.6;}
+	.da-slide 							{ width: 625px !important; margin-left: -315px !important; }
+	.ca-container						{ width: 320px; margin-bottom: 60px; }
+	.ca-nav								{ position: absolute; bottom: -10px; }
+	.ca-nav span						{ margin-top: 0; left: 120px; }
+	.ca-nav span.ca-nav-next			{ left: 180px; }
+	.ca-content-wrapper					{ left: 0px !important; }
+	.ca-content							{ width: 320px; position: relative; }
+	table th							{ padding: 0px 4px; }
+	table td							{ padding:9px 4px; }
+	table.shop_table td.product-name a	{ display:block; max-width: 60px; }
+	table.shop_table td.actions .button, table.shop_table td.actions .button-alt, table.shop_table td.actions .button.alt { padding-left: 9px; padding-right: 9px; }
+}

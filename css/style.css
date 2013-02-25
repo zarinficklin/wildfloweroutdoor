@@ -1,0 +1,264 @@
+/* Global */
+body { font-family:'Open Sans', helvetica, 'helvetica-neue', arial, sans-serif; background:url(../img/mountains.png)no-repeat center #f6f4ee; color:#898989; font-size:15px; }
+h1,h2,h3,h4,h5,h6 { font-family:'Open Sans', helvetica, 'helvetica-neue', arial, sans-serif; font-weight:normal; }
+h1 { font-size:40px; line-height:48px; }
+h2 { font-size:30px; line-height:36px; }
+h3 { font-size:24px; line-height:30px; }
+h4 { font-size:18px; line-height:18px; }
+p { font-size:15px; line-height:18px;}
+a { color:#69b7c9; }
+a:hover { text-decoration:none; }
+ul { list-style-type:none; margin:0; }
+.container { width:960px; margin:0 auto; display:block; }
+.pink { color:#d24586; }
+.padding { padding:40px; }
+
+/*Typography*/
+@font-face {
+    font-family: 'american-purpose';
+    src: url('fonts/american_purpose-webfont.eot');
+    src: url('fonts/american_purpose-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/american_purpose-webfont.woff') format('woff'),
+         url('fonts/american_purpose-webfont.ttf') format('truetype'),
+         url('fonts/american_purpose-webfont.svg#american_purposeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'janda-curlygirl-chunky';
+    src: url('fonts/jandacurlygirlchunky-webfont.eot');
+    src: url('fonts/jandacurlygirlchunky-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jandacurlygirlchunky-webfont.woff') format('woff'),
+         url('fonts/jandacurlygirlchunky-webfont.ttf') format('truetype'),
+         url('fonts/jandacurlygirlchunky-webfont.svg#janda_curlygirl_chunkyregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Main */
+.wf-header { width:100%; height:95px; -webkit-box-shadow: 0 3px 4px rgba(0,0,1,.2);
+	-moz-box-shadow: 0 3px 4px rgba(0,0,1,.2);
+	box-shadow: 0 3px 4px rgba(0,0,1,.2);
+	background:black;
+	/*
+	background-image: -webkit-linear-gradient(bottom, #bc2d88, #ec5b9e);
+	background-image: -moz-linear-gradient(bottom, #bc2d88, #ec5b9e);
+	background-image: -o-linear-gradient(bottom, #bc2d88, #ec5b9e);
+	background-image: -ms-linear-gradient(bottom, #bc2d88, #ec5b9e);
+	background-image: linear-gradient(to top, #bc2d88, #ec5b9e);
+	*/}
+	.logo { float:left; }
+		.logo img { padding-top:3px; }
+	.cart-search-wrap { float:right; background:url(../img/yellow-flower.png)no-repeat; }
+		.cart-nav { height:25px; padding-top:15px; width:300px; color:white; }
+			.cart-nav a { color:white; }
+			.cart-nav p { float:right; }
+			.cart-nav a:hover { color:white; text-decoration:underline; }
+		.wf-search { height:40px; width:300px; margin-top:7px; float:right; }
+			.wf-search input { float:right; }
+		
+.main-nav { border:1px solid #ccc; margin-top:20px; padding-left:0px; -webkit-box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	background-image: -webkit-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -moz-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -o-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -ms-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: linear-gradient(to top, #ede6d5, rgba(237,230,213,0));
+	background-color:#f6f4ee; }
+	.dd-item { font-size:12px; float:left; height:40px; padding:7px 14px; border-right:1px solid #cccccc; }
+		.dd-item.last { border-right:none; }
+	ul.main-nav a, .dd-item { color:#000; }
+	ul.main-nav .dd-item:hover { -webkit-box-shadow: inset 0 0 30px rgba(0,0,1,.1);
+	-moz-box-shadow: inset 0 0 30px rgba(0,0,1,.1);
+	box-shadow: inset 0 0 30px rgba(0,0,1,.1); }
+	.dropdown-menu { -webkit-box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	box-shadow: 0 1px 4px rgba(0,0,1,.15), inset 0 1px rgba(255,255,255,.75);
+	background-image: -webkit-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -moz-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -o-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: -ms-linear-gradient(bottom, #ede6d5, rgba(237,230,213,0));
+	background-image: linear-gradient(to top, #ede6d5, rgba(237,230,213,0));
+	background-color:#f6f4ee; }
+	
+.promo-banner { height:20px; background:#f6589a; color:white; margin-top:20px; padding:10px 0; text-align:center; }
+	.promo-banner p, .newsletter-signup { font-size:18px; }
+
+.promo-boxes { margin-top:20px; }
+	.promo-main { width:600px; height:500px;  float:left; }
+	.promo-right-wrap { width:340px; height:500px; float:right; }
+		.promo-right-1 { width:340px; height:153px; margin-bottom:20px; }
+		.promo-right-2 { width:340px; height:153px; margin-bottom:20px; }
+		.promo-right-3 { width:340px; height:154px; }
+		
+.newsletter-signup { background:/* #a59893 */#f6589a; color:white; margin-top:20px; padding:10px 0; }
+	.newsletter-signup form { width:815px; margin:0 0 0 22px; float:left; }
+	.newsletter-signup a { color:white; text-decoration:underline; }
+	.connect { float:right; width:100px; }
+
+.wf-footer { background:#555; color:white; margin-top:40px; padding-bottom:20px; font-size:14px; }
+	.footer-nav { margin-top:20px; }
+		ul.footer-nav li { float:left; padding:7px 11px; font-size:12px;  }
+		.wf-footer a { color:white; text-decoration:underline; }
+		.wf-footer a:hover { color:white; text-decoration:underline; }
+
+
+/* Register Form */
+.register-form { margin:40px auto; background:black; width:445px; }
+	.register-form label { color:white; }
+	.register-form button { float:right; }
+
+/*additions*/
+#logo { background: url(../img/logo.png) no-repeat 0 0 transparent; padding: 40px 0px 0px 0px; }
+
+
+#login { position: absolute; top: 3px; right: 0px; color: white; font-weight: bold; }
+	#login a:link { text-decoration: none; color: white; }
+	#login a:visited { text-decoration: none; color: white; }
+
+.small-flower { background: url(../img/yellow-flower.png) no-repeat -37px -13px transparent; padding: 33px; position: absolute; top: 20px; right: 180px; }
+.wrapper { width: 960px; margin: 0 auto; position: relative; }
+
+#content { background: #000; padding: 80px 0px 208px 0px; margin-bottom: 20px; background: url('../img/landingbg.png')no-repeat 5px 62px #000; position: relative; }
+	#notice { text-align: center; background: #f6589a; z-index: 100; position: absolute; width: 100%; height: 55px; top: 36px; }
+		#notice p { color: yellow; font-weight: bold; font-size: 1.3em; line-height: 1em; }
+	#trailfest-logo { background: url(../img/trailfest.png) no-repeat 0 0 transparent; width: 542px; height: 248px; position: absolute; top: 40px; left: 15px; z-index: 110; }
+	#event-info { background: #f6589a; width: 720px; margin: 220px auto 0 auto; border: 2px solid white; border-radius: 10px; text-align: center; color: black; }
+	#event-info #date {
+		color: white;
+		font-family: 'janda-curlygirl-chunky';
+		text-shadow: 2px 2px 2px #000;
+	}
+		.important {
+			font-family: 'american-purpose', arial, sans-serif;
+			display: block;
+			font-weight: bold;
+			font-size: 1.5em;
+			line-height: 2em;
+		}
+		.details {
+			font-weight: bold;
+			font-family: 'american-purpose', arial, sans-serif;
+		}
+	hr.style-five {
+	    border: 0;
+	    height: 0; /* Firefox... */
+	    box-shadow: 0 0 7px 5px black;
+	    width: 75%;
+	}
+	hr.style-five:after {  /* Not really supposed to work, but does */
+	    content: "\00a0";  /* Prevent margin collapse */
+	}
+	.social {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		color: white;
+	}
+		.social p {
+			margin: 0 0 50px 0;
+			font-size: 1.3em;
+		}
+		.social #facebook {
+			background: url(../img/facebooklrg.png) no-repeat 0 0 transparent;
+			width: 123px;
+			height: 50px;
+			padding: 45px 0 0 142px;
+		}
+
+		/*.social a {
+			padding: 15px 15px;
+		}
+
+			.social .facebook {
+				background: url(../img/facebook.png) no-repeat 0 0 transparent;
+			}
+
+			.social .youtube {
+				background: url(../img/youtube.png) no-repeat 0 0 transparent;
+			}
+
+			.social .pinterest {
+				background: url(../img/pinterest.png) no-repeat 0 0 transparent;
+			}*/
+
+.spacing {
+	margin: 10px 0 0 0;
+}
+
+#event-schedule {
+	background: url(../img/event-shedule.png) no-repeat 0 0 transparent;
+	width: 211px;
+	height: 207px;
+	position: absolute;
+	top: 125px;
+	right: 180px;
+	z-index: 50;
+}
+
+#courses {
+	background: url(../img/courses.png) no-repeat 0 0 transparent;
+	width: 232px;
+	height: 261px;
+	position: absolute;
+	top: 15px;
+	right: 40px;
+	z-index: 40;
+}
+
+#age-group {
+	background: url(../img/age-group.png) no-repeat 0 0 transparent;
+	width: 232px;
+	height: 261px;
+	position: absolute;
+	top: 180px;
+	right: -50px;
+	z-index: 40;
+}
+
+#register {
+	background: url(../img/register.png) no-repeat 0 0 transparent;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 293px;
+	height: 275px;
+}
+
+#sponsors {
+	background: url(../img/sponsors.png) no-repeat 0 0 transparent;
+	position: absolute;
+	bottom: 0;
+	left: 220px;
+	width: 189px;
+	height: 175px;
+}
+
+#flower {
+	background: url(../img/flower-large.png) no-repeat 0 0 transparent;
+	position: absolute;
+	bottom: 184px;
+	left: 0;
+	width: 116px;
+	height: 130px;
+}
+
+#snowbasin {
+	background: url(../img/snowbasin.png) no-repeat 0 0 transparent;
+	padding: 50px 220px 0 0;
+	position: absolute;
+	left: 115px;
+	top: -19px;
+}
+
+#ski {
+	font-family: 'american-purpose', arial, sans-serif;
+	font-size: 1.5em;
+	line-height: 18px;
+	position: relative;
+	padding: 0 0 0 200px;
+}
+	

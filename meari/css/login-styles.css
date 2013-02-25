@@ -1,0 +1,164 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	min-width: inherit;
+	background-image: none;
+	background-color: transparent;
+}
+
+#login_container {
+	width: 504px;
+	margin: 100px auto 0;
+	position: relative;
+	text-align: center;
+}
+
+#login_container h1.logo {
+	color: white;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+	font-size: 50px;
+	opacity: 1;
+	font-weight: bold;
+	font-family: "Androgyne Medium";
+	line-height: 1em;
+	margin: 0 0 20px 0;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+#login_wrapper {
+	margin-top: -50px;
+}
+
+#login_container a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size:14px;
+	text-shadow:0px 1px 3px rgba(0,0,0,0.75);
+}
+
+#login_container a:hover {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+#login_container a.forgot {
+	display: block;
+	margin: 0 auto;
+	width: 504px;
+	text-align:center;
+}
+
+#login_container form h1 {
+	font-size:26px;
+	font-weight:bold;
+	text-align:center;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.35);
+	top: 55px;
+	text-align: center;
+	opacity: 0.7;
+	color: black;
+	margin: 0 0 22px 0;
+	line-height: 1em;
+}
+
+#login_container input[type="text"], #login_container input[type="password"], #login_container input[type="email"], #login_container input[type="tel"], #login_container textarea {
+	-webkit-transition: 0;
+	-moz-transition: 0;
+	-o-transition: 0;
+	transition: 0;
+}
+
+#login_container input[type=text]:focus,
+#login_container input[type=password]:focus,
+#login_container input[type=email]:focus,
+#login_container input[type=tel]:focus,
+#login_container textarea:focus,
+#login_container select:focus {
+	outline: none;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#login_container #login_wrapper form input[type=text], #login_container #login_wrapper form input[type=email], #login_container #login_wrapper form input[type=password] {
+	border: none;
+	background: url(../images/input.png);
+	display: block;
+	height: 54px;
+	width: 319px;
+	max-width: 319px;
+	padding: 0 10px;
+	font-size:16px;
+	color:rgba(0,0,0,0.7);
+	text-align:left;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.28);
+	margin-bottom: 6px;
+}
+
+#login_container #login_wrapper form input[type=text]:focus, #login_container #login_wrapper form input[type=email]:focus, #login_container #login_wrapper form input[type=password]:focus {
+	outline: none;
+	opacity: 1;
+	background-position: 0 -54px;
+}
+
+#login_container #login_wrapper form a.linkform {
+	position: absolute;
+	left: 320px;
+	bottom: 110px;
+}
+
+#login_container #login_wrapper form input[type=button], #login_container #login_wrapper form input[type=submit] {
+	background: url(../images/button.png) no-repeat;
+	border: none;
+	display: block;
+	width: 203px;
+	height: 44px;
+	cursor: pointer;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	color: #333 !important;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.35);
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 21px 0 0 2px;
+}
+
+#login_container #login_wrapper form input[type=button]:hover, #login_container #login_wrapper form input[type=submit]:hover{
+	background-position: 0 -44px;
+}
+
+#login_container #login_wrapper form input[type=button]:active, #login_container #login_wrapper form input[type=submit]:active{
+	background-position: 0 -88px;
+}
+
+#login_container form {
+	width: 339px;
+	padding: 76px 82px;
+}
+
+#login_container form.login {
+	background: url(../images/login_box.png);
+}
+
+#login_container form.register {
+	background: url(../images/register_box.png);
+}
+
+
+#login_container ul.woocommerce_error {
+	list-style: none;
+	background-color: #FFEBE8;
+	border-color: #C00;
+	text-align: left;
+	padding: 12px;
+	margin: 0px auto;
+	width: 366px;
+	margin-bottom: 20px;
+	border: 1px solid #C00;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
