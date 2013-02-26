@@ -4,10 +4,10 @@
 define( 'CSV_FILENAME', 'pedalfest-register.csv' );
 
 // Handle POST
-if( isset( $_POST[ 'name' ] ) ) {
+if( isset( $_POST[ 'submit_btn' ] ) ) {
 	// Create the file and add the header if the file doesn't exist
     if( !file_exists( CSV_FILENAME ) ) {
-        $csvHeader = "name,age,emergency_contact,emergency_contact_phone,tshirt_preference,tshirt_size,charity,other_charity,how_did_you_hear,cycling_club\n";
+        $csvHeader = "name,age,email,phone,address,emergency_contact,emergency_contact_phone,course_selection,tshirt_preference,tshirt_size,charity,other_charity,how_did_you_hear,cycling_club\n";
         $success = file_put_contents( CSV_FILENAME, $csvHeader );
         if( !$success ) {
         	throw new Exception( "Failed to write to file " . CSV_FILENAME . ". Please check permissions." );
@@ -31,15 +31,15 @@ if( isset( $_POST[ 'name' ] ) ) {
 		$post[ $key ] = str_replace( array( "\\", "'", "\"" ), array( "", "\\'", "" ), $val );
 	}
     
-    $csvLine = '"' . $post[ 'name' ] . '","' . $post[ 'age' ] . '","' . $post[ 'emergency_contact' ] . '","' . 
-    	$post[ 'emergency_contact_phone' ] . '","' . $post[ 'tshirt_preference' ] . '","' . $post[ 'tshirt_size' ] . '","' . 
-    	$post[ 'charity' ] . '","' . $charity . '","' . $post[ 'how_did_you_hear' ] . '","' . 
-    	$post[ 'cycling_club' ] . "\"\n";
+    $csvLine = '"' . $post[ 'name' ] . '","' . $post[ 'age' ] . '","' . $post[ 'email' ] . '","' . $post[ 'phone' ] . '","' . 
+      	$post[ 'address' ] . '","' . $post[ 'emergency_contact' ] . '","' .	$post[ 'emergency_contact_phone' ] . '","' . 
+      	$post[ 'course_selection' ] . '","' . $post[ 'tshirt_preference' ] . '","' . $post[ 'tshirt_size' ] . '","' . 
+    	$post[ 'charity' ] . '","' . $charity . '","' . $post[ 'how_did_you_hear' ] . '","' . $post[ 'cycling_club' ] . "\"\n";
     
     // Write to the file
     $success = file_put_contents( CSV_FILENAME, $csvLine, FILE_APPEND );
     if( !$success ) {
-    	throw new Exception( "Failed to write to file " . CSV_FILENAME . ". Please check permissions." );
+    	throw new Exception( "An error occured durring your registration. <a href='../forms/feedback_form.html'>Please let us know!</a>" );
     }
     
     header( "Location:../store/?product=wildflower-pedalfest-registration" );
@@ -47,9 +47,10 @@ if( isset( $_POST[ 'name' ] ) ) {
 }
 
 // Options for select
-$tshirtPrefOptions = array( 'Fitted', 'Regular' );
-$tshirtSizeOptions = array( 'xs', 'small', 'medium', 'large', 'xl', '2xl', '3xl', '4xl' );
-$charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Box House','Hess Cancer Foundation','girls on the run', 'Other' );
+$tshirtPrefOptions = array( 'fitted', 'regular' );
+$tshirtSizeOptions = array( 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl', 'xxxxl' );
+$charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Box House', 'Hess Cancer Foundation', 'Girls on the Run', 'Other' );
+$courseOptions = array( '20', '32', '50', '75' );
 
 ?>
 
@@ -167,7 +168,7 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 
 <div class="container">
 	<div class="padding register-form">
-	<form class="form-horizontal" action="index.php" method="POST" enctype="multipart/form-data" name="register">
+	<form class="form-horizontal" action="index.php" method="POST" enctype="multipart/form-data" id="register_form">
 		<fieldset>
 			<div class="control-group">
 				<label class="control-label" for="name">Name:</label>
@@ -176,27 +177,65 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="age">Age:</label>
+				<label class="control-label" for="age">Age on Aug 17, 2013:</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="age" name="age"  value="<?php if( !empty( $_POST[ 'age' ] ) ) { echo( $_POST[ 'age' ] ); } ?>">
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="emergency_contact">Emergency contact:</label>
+				<label class="control-label" for="age">E-mail Address:</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="email" name="email" value="<?php if( !empty( $_POST[ 'email' ] ) ) { echo( $_POST[ 'email' ] ); } ?>">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="age">Phone Number:</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="phone" name="phone"  value="<?php if( !empty( $_POST[ 'phone' ] ) ) { echo( $_POST[ 'phone' ] ); } ?>">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="age">Address:</label>
+				<div class="controls">
+					<input type="text" class="input-xlarge" id="address" name="address"  value="<?php if( !empty( $_POST[ 'address' ] ) ) { echo( $_POST[ 'address' ] ); } ?>">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="emergency_contact">Emergency Contact Name:</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="emergency_contact" name="emergency_contact"  value="<?php if( !empty( $_POST[ 'emergency_contact' ] ) ) { echo( $_POST[ 'emergency_contact' ] ); } ?>">
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="emergency_contact_phone">Emergency contact phone:</label>
+				<label class="control-label" for="emergency_contact_phone">Emergency Contact Phone:</label>
 				<div class="controls">
 					<input type="text" class="input-xlarge" id="emergency_contact_phone" name="emergency_contact_phone"  value="<?php if( !empty( $_POST[ 'emergency_contact_phone' ] ) ) { echo( $_POST[ 'emergency_contact_phone' ] ); } ?>">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="course_selection">Course Selection:</label>
+				<div class="controls">
+					<select name="course_selection">
+						<option class="muted" disabled value="" selected>Please select...</option>
+						<?php 
+						// Outputs the options for course_selection
+						foreach( $courseOptions as $opt ) {
+							if( !empty( $_POST[ 'course_selection' ] ) && $_POST[ 'course_selection' ] == $opt ) {
+								echo( "<option selected>$opt</option>" );
+							}
+							else {
+								echo( "<option>$opt</option>" );
+							}
+						}
+						?>
+					</select>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="tshirt_preference">T-shirt Preference:</label>
 				<div class="controls">
 					<select name="tshirt_preference">
+						<option class="muted" disabled value="" selected>Please select...</option>
 						<?php 
 						// Outputs the options for t-shirt preference
 						foreach( $tshirtPrefOptions as $opt ) {
@@ -212,9 +251,10 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="tshirt_size">T-shirt Size:</label>
+				<label class="control-label" for="tshirt_size">Size:</label>
 				<div class="controls">
 					<select name="tshirt_size">
+						<option class="muted" disabled value="" selected>Please select...</option>
 						<?php 
 						// Outputs the options for t-shirt size
 						foreach( $tshirtSizeOptions as $opt ) {
@@ -230,9 +270,10 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="charity">Charity you would like to support through Threshold Gives:</label>
+				<label class="control-label" for="charity">Charity you would like to support:</label>
 				<div class="controls">
-					<select name="charity" class="input-xlarge" onchange="if( this.selectedIndex == 2 ) $('#other_charity').prop('disabled', false); else $('#other_charity').prop('disabled', true);">
+					<select name="charity" class="input-xlarge" onchange="if( this.selectedIndex == <?php echo( count( $charityOptions ) ); ?> ) $('#other_charity_group').show(); else $('#other_charity_group').hide();">
+						<option class="muted" disabled value="" selected>Please select...</option>
 						<?php 
 						// Outputs the options for Charity
 						foreach( $charityOptions as $opt ) {
@@ -242,7 +283,7 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 									echo( '
 											<script type="text/javascript">
 											$( document ).ready( function() {
-												$("#other_charity").prop("disabled", false);
+												$("#other_charity_group").show();
 											});
 											</script> ' );
 								}
@@ -255,10 +296,10 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 					</select>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="other_charity">Other charity:</label>
+			<div class="control-group" id="other_charity_group">
+				<label class="control-label" for="other_charity">Other:</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" disabled id="other_charity" name="other_charity"  value="<?php if( !empty( $_POST[ 'other_charity' ] ) ) { echo( $_POST[ 'other_charity' ] ); } ?>">
+					<input type="text" class="input-xlarge" id="other_charity" name="other_charity"  value="<?php if( !empty( $_POST[ 'other_charity' ] ) ) { echo( $_POST[ 'other_charity' ] ); } ?>">
 				</div>
 			</div>
 			<div class="control-group">
@@ -276,7 +317,7 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 			<div class="control-group">
 				<p>By clicking continue, you agree to the terms on <a href="pedalfest-waiver.doc" target="_blank">our waiver</a>.</p>
 				<p>After completing this form, click continue and add the event registration to your cart to complete registration.</p>
-				<button class="btn btn-large btn-warning">Continue</button>
+				<button class="btn btn-large btn-warning" name="submit_btn">Continue</button>
 			</div>
 		</fieldset>
 	</form>
@@ -317,6 +358,8 @@ $charityOptions = array( 'Morgan County Share the Road Signs', 'The Christmas Bo
 
 <!-- scripts & modals below -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/jquery.validate.additional-methods.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 
 <script>
@@ -324,6 +367,62 @@ $(function() {
     $('.carousel').carousel({
 	  interval:6000
 	})
+});
+
+$(document).ready(function(){
+	$("#other_charity_group").hide();
+	
+	$('#register_form').validate( {
+		rules: {
+			name: {
+				required: true
+			},
+			age: {
+				required: true,
+				number: true,
+				maxlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				phoneUS: true
+			},
+			address: {
+				required: true
+			},
+			emergency_contact: {
+				required: true
+			},
+			emergency_contact_phone: {
+				required: true,
+				phoneUS: true
+			},
+			course_selection: {
+				required: true
+			},
+			tshirt_preference: {
+				required: true
+			},
+			tshirt_size: {
+				required: true
+			},
+			charity: {
+				required: true
+			}
+		},
+		highlight: function(element) {
+			$(element).closest('.control-group').removeClass('success').addClass('error');
+		},
+		success: function(element) {
+			element.addClass('valid').closest('.control-group').removeClass('error').addClass('success');
+		},
+		errorPlacement: function(error, element) {
+			error.insertAfter(element);
+		}
+	});
 });
 </script>
 
